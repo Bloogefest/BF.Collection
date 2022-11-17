@@ -1,2 +1,2 @@
 # BF.Collection
-#### `Collections API Library`
+#### `Библиотека коллекций`
