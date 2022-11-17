@@ -1,2 +1,2 @@
-# BF.Common
-#### `Shared API Library`
+# BF.Collection
+#### `Collections API Library`
