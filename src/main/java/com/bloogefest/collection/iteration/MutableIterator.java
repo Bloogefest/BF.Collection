@@ -1,9 +1,15 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
+
 package com.bloogefest.collection.iteration;
 
+import com.bloogefest.annotation.analysis.Contract;
+import com.bloogefest.annotation.analysis.NotNull;
+import com.bloogefest.annotation.analysis.Nullable;
 import com.bloogefest.common.validation.NullException;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -13,21 +19,16 @@ import java.util.NoSuchElementException;
  *
  * @param <E> тип элемента.
  *
- * @author Bloogefest
- * @version 0.0
- * @since 0.0.0
+ * @since 1.0.0-RC1
  */
-@SuppressWarnings("unused")
 public interface MutableIterator<E> extends ImmutableIterator<E> {
 
     /**
      * @return Текущий элемент.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     @Nullable E element();
 
     /**
@@ -38,10 +39,9 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      * @return Текущий итератор.
      *
      * @throws NullException элемент не должен быть нулевым.
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
-    @Contract(value = "_ -> this", pure = true)
+    @Contract(value = "_ -> this")
     @NotNull MutableIterator<E> change(final @Nullable E element) throws NullException;
 
     /**
@@ -49,20 +49,17 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> delete();
 
     /**
      * @return Кэшированный элемент.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     @Nullable E cached();
 
     /**
@@ -70,11 +67,10 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> cache();
 
     /**
@@ -85,11 +81,10 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      * @return Текущий итератор.
      *
      * @throws NullException элемент не должен быть нулевым.
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "_ -> this", pure = true)
+    @Contract(value = "_ -> this")
     @NotNull MutableIterator<E> cache(final @Nullable E element) throws NullException;
 
     /**
@@ -97,10 +92,9 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> paste();
 
     /**
@@ -108,10 +102,9 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> cut();
 
     /**
@@ -119,11 +112,10 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> next();
 
     /**
@@ -131,11 +123,10 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> previous();
 
     /**
@@ -143,11 +134,10 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> first();
 
     /**
@@ -155,11 +145,10 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> last();
 
     /**
@@ -167,11 +156,10 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> start();
 
     /**
@@ -179,11 +167,10 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Текущий итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> this", pure = true)
+    @Contract(value = "-> this")
     @NotNull MutableIterator<E> end();
 
     /**
@@ -191,11 +178,10 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
      *
      * @return Внешний неизменяемый итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> new", pure = true)
+    @Contract(value = "-> new")
     default @NotNull Iterator<E> external() {
         return new Iterator<>() {
             @Override
@@ -220,111 +206,90 @@ public interface MutableIterator<E> extends ImmutableIterator<E> {
     /**
      * @return Существует ли текущий элемент.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean hasElement();
 
     /**
      * @return Существует ли кэшированный элемент.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean hasCached();
 
     /**
      * @return Существует ли следующий элемент.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean hasNext();
 
     /**
      * @return Существует ли предыдущий элемент.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean hasPrevious();
 
     /**
      * @return Существует ли первый элемент.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean hasFirst();
 
     /**
      * @return Существует ли последний элемент.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean hasLast();
 
     /**
      * @return Находится ли в начальной позиции.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean starting();
 
     /**
      * @return Находится ли в итерируемой позиции.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean iterating();
 
     /**
      * @return Находится ли в конечной позиции.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean ending();
 
     /**
      * @return Является ли нулевым.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean nullable();
 
     /**
      * @return Является ли изменяемым.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> true", pure = true)
+    @Contract(value = "-> true")
     default boolean mutable() {
         return true;
     }

@@ -5,8 +5,8 @@
  */
 
 /**
- * Итерационный пакет.
+ * Содержит основные инструменты коллекций.
  *
  * @since 1.0.0-RC1
  */
-package com.bloogefest.collection.iteration;
+package com.bloogefest.collection;

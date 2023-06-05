@@ -1,43 +1,43 @@
-package com.bloogefest.collection.base;
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ */
 
+package com.bloogefest.collection;
+
+import com.bloogefest.annotation.analysis.Contract;
+import com.bloogefest.annotation.analysis.NotNull;
+import com.bloogefest.annotation.analysis.Range;
 import com.bloogefest.collection.iteration.MutableIterator;
-import com.bloogefest.common.base.Predicates;
-import com.bloogefest.common.function.Consumer;
+import com.bloogefest.common.function.Handler;
 import com.bloogefest.common.function.Predicate;
 import com.bloogefest.common.validation.NullException;
 import com.bloogefest.common.validation.Validator;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Range;
 
 /**
  * Изменяемая коллекция.
  *
  * @param <E> тип элемента.
  *
- * @author Bloogefest
- * @version 0.0
- * @since 0.0.0
+ * @since 1.0.0-RC1
  */
-@SuppressWarnings("unused")
 public interface MutableCollection<E> extends ImmutableCollection<E> {
 
     /**
-     * Итерирует потребитель по всей коллекции.
+     * Итерирует обработчик по всей коллекции.
      *
-     * @param consumer потребитель.
+     * @param handler обработчик.
      *
      * @return Текущая коллекция.
      *
-     * @throws NullException потребитель не должен быть нулевым.
-     * @author Bloogefest
-     * @since 0.0.0
+     * @throws NullException обработчик не должен быть нулевым.
+     * @since 1.0.0-RC1
      */
-    @Override
     @Contract(value = "_ -> this", pure = true)
-    default @NotNull MutableCollection<E> iterate(final @NotNull Consumer<E> consumer) throws NullException {
-        Validator.notNull(consumer, "consumer");
-        for (final var element : external()) consumer.consume(element);
+    default @NotNull MutableCollection<E> iterate(final @NotNull Handler<E> handler) throws NullException {
+        Validator.notNull(handler, "handler");
+        for (final var element : external()) handler.handle(element);
         return this;
     }
 
@@ -49,11 +49,10 @@ public interface MutableCollection<E> extends ImmutableCollection<E> {
      * @return Текущая коллекция.
      *
      * @throws NullException предикат не должен быть нулевым.
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "_ -> this", pure = true)
+    @Contract(value = "_ -> this")
     default @NotNull MutableCollection<E> iterate(final @NotNull Predicate<E> predicate) throws NullException {
         Validator.notNull(predicate, "predicate");
         for (final var element : external()) if (!predicate.evaluate(element)) break;
@@ -65,8 +64,7 @@ public interface MutableCollection<E> extends ImmutableCollection<E> {
      *
      * @return Изменяемый итератор.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
     @Contract(value = "-> new", pure = true)
@@ -77,11 +75,10 @@ public interface MutableCollection<E> extends ImmutableCollection<E> {
      *
      * @return Внешняя изменяемая коллекция.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> new", pure = true)
+    @Contract(value = "-> new")
     default @NotNull Iterable<E> external() {
         return iterator()::external;
     }
@@ -89,44 +86,36 @@ public interface MutableCollection<E> extends ImmutableCollection<E> {
     /**
      * @return Текущий размер.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Range(from = 0, to = Integer.MAX_VALUE)
-    @Contract(pure = true)
-    int size();
+    @Range(from = 0, to = Integer.MAX_VALUE) int size();
 
     /**
      * @return Является ли пустой.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     default boolean empty() {
-        return Predicates.equals(size(), 0);
+        return size() == 0;
     }
 
     /**
      * @return Является ли нулевой.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(pure = true)
     boolean nullable();
 
     /**
      * @return Является ли изменяемой.
      *
-     * @author Bloogefest
-     * @since 0.0.0
+     * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> true", pure = true)
+    @Contract(value = "-> true")
     default boolean mutable() {
         return true;
     }
