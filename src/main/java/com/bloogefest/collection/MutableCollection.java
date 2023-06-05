@@ -34,7 +34,7 @@ public interface MutableCollection<E> extends ImmutableCollection<E> {
      * @throws NullException обработчик не должен быть нулевым.
      * @since 1.0.0-RC1
      */
-    @Contract(value = "_ -> this", pure = true)
+    @Contract(value = "_ -> this")
     default @NotNull MutableCollection<E> iterate(final @NotNull Handler<E> handler) throws NullException {
         Validator.notNull(handler, "handler");
         for (final var element : external()) handler.handle(element);
@@ -67,7 +67,7 @@ public interface MutableCollection<E> extends ImmutableCollection<E> {
      * @since 1.0.0-RC1
      */
     @Override
-    @Contract(value = "-> new", pure = true)
+    @Contract(value = "-> new")
     @NotNull MutableIterator<E> iterator();
 
     /**
