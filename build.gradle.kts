@@ -11,6 +11,10 @@ description = "Библиотека коллекций."
 repositories {
     mavenLocal()
     mavenCentral()
+    maven {
+        name = "OSSRH SNAPSHOT"
+        url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots/")
+    }
 }
 
 dependencies {
