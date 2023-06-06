@@ -17,25 +17,25 @@ import java.util.NoSuchElementException;
 /**
  * Итератор неизменяемых коллекций.
  *
- * @param <E> тип элемента.
+ * @param <T> тип элемента.
  *
  * @since 1.0.0-RC1
  */
-public interface ImmutableIterator<E> {
+public interface ImmutableIterator<T> {
 
     /**
      * @return Текущий элемент.
      *
      * @since 1.0.0-RC1
      */
-    @Nullable E element();
+    @Nullable T element();
 
     /**
      * @return Кэшированный элемент.
      *
      * @since 1.0.0-RC1
      */
-    @Nullable E cached();
+    @Nullable T cached();
 
     /**
      * Кэширует текущий элемент.
@@ -44,8 +44,8 @@ public interface ImmutableIterator<E> {
      *
      * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this")
-    @NotNull ImmutableIterator<E> cache();
+    @Contract("-> this")
+    @NotNull ImmutableIterator<T> cache();
 
     /**
      * Кэширует переданный элемент.
@@ -57,8 +57,8 @@ public interface ImmutableIterator<E> {
      * @throws NullException элемент не должен быть нулевым.
      * @since 1.0.0-RC1
      */
-    @Contract(value = "_ -> this")
-    @NotNull ImmutableIterator<E> cache(final @Nullable E element) throws NullException;
+    @Contract("_ -> this")
+    @NotNull ImmutableIterator<T> cache(final @Nullable T element) throws NullException;
 
     /**
      * Переходит к следующему элементу, когда тот существует.
@@ -67,8 +67,8 @@ public interface ImmutableIterator<E> {
      *
      * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this")
-    @NotNull ImmutableIterator<E> next();
+    @Contract("-> this")
+    @NotNull ImmutableIterator<T> next();
 
     /**
      * Переходит к предыдущему элементу, когда тот существует.
@@ -77,8 +77,8 @@ public interface ImmutableIterator<E> {
      *
      * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this")
-    @NotNull ImmutableIterator<E> previous();
+    @Contract("-> this")
+    @NotNull ImmutableIterator<T> previous();
 
     /**
      * Переходит к первому элементу, когда тот существует.
@@ -87,8 +87,8 @@ public interface ImmutableIterator<E> {
      *
      * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this")
-    @NotNull ImmutableIterator<E> first();
+    @Contract("-> this")
+    @NotNull ImmutableIterator<T> first();
 
     /**
      * Переходит к последнему элементу, когда тот существует.
@@ -97,8 +97,8 @@ public interface ImmutableIterator<E> {
      *
      * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this")
-    @NotNull ImmutableIterator<E> last();
+    @Contract("-> this")
+    @NotNull ImmutableIterator<T> last();
 
     /**
      * Переходит к начальной позиции.
@@ -107,8 +107,8 @@ public interface ImmutableIterator<E> {
      *
      * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this")
-    @NotNull ImmutableIterator<E> start();
+    @Contract("-> this")
+    @NotNull ImmutableIterator<T> start();
 
     /**
      * Переходит к конечной позиции.
@@ -117,8 +117,8 @@ public interface ImmutableIterator<E> {
      *
      * @since 1.0.0-RC1
      */
-    @Contract(value = "-> this")
-    @NotNull ImmutableIterator<E> end();
+    @Contract("-> this")
+    @NotNull ImmutableIterator<T> end();
 
     /**
      * Создаёт внешний неизменяемый итератор на основе текущего.
@@ -127,8 +127,8 @@ public interface ImmutableIterator<E> {
      *
      * @since 1.0.0-RC1
      */
-    @Contract(value = "-> new")
-    default @NotNull Iterator<E> external() {
+    @Contract("-> new")
+    default @NotNull Iterator<T> external() {
         return new Iterator<>() {
             @Override
             public boolean hasNext() {
@@ -136,7 +136,7 @@ public interface ImmutableIterator<E> {
             }
 
             @Override
-            public E next() {
+            public T next() {
                 if (!hasNext()) throw new NoSuchElementException();
                 return ImmutableIterator.this.next().element();
             }
@@ -218,7 +218,7 @@ public interface ImmutableIterator<E> {
      *
      * @since 1.0.0-RC1
      */
-    @Contract(value = "-> false")
+    @Contract("-> false")
     default boolean mutable() {
         return false;
     }
