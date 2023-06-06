@@ -12,7 +12,7 @@ import com.bloogefest.annotation.analysis.NotNull;
 import com.bloogefest.annotation.analysis.Nullable;
 
 /**
- * Исключение последовательной итерации по коллекции.
+ * Исключение последовательной итерации.
  *
  * @since 1.0.0-RC1
  */
@@ -23,14 +23,7 @@ public class SequentialIterationException extends IterationException {
      *
      * @since 1.0.0-RC1
      */
-    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to iterate sequentially through the collection";
-
-    /**
-     * Шаблонное сообщение.
-     *
-     * @since 1.0.0-RC1
-     */
-    public static final @NotNls @NotNull String TEMPLATE_MESSAGE = "Failed to iterate sequentially through %s";
+    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to iterate sequentially";
 
     /**
      * Создаёт исключение по умолчанию.
