@@ -13,7 +13,7 @@ import com.bloogefest.annotation.analysis.Nullable;
 import com.bloogefest.collection.CollectionException;
 
 /**
- * Исключение итерации по коллекции.
+ * Исключение итерации.
  *
  * @since 1.0.0-RC1
  */
@@ -24,14 +24,7 @@ public class IterationException extends CollectionException {
      *
      * @since 1.0.0-RC1
      */
-    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to iterate through the collection";
-
-    /**
-     * Шаблонное сообщение.
-     *
-     * @since 1.0.0-RC1
-     */
-    public static final @NotNls @NotNull String TEMPLATE_MESSAGE = "Failed to iterate through %s";
+    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to iterate";
 
     /**
      * Создаёт исключение по умолчанию.
