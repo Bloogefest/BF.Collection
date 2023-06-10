@@ -27,7 +27,7 @@ public class IterationException extends CollectionException {
     public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to iterate";
 
     /**
-     * Создаёт исключение по умолчанию.
+     * Создаёт исключение итерации по умолчанию.
      *
      * @since 1.0.0-RC1
      */
@@ -37,7 +37,7 @@ public class IterationException extends CollectionException {
     }
 
     /**
-     * Создаёт исключение на основе сообщения.
+     * Создаёт исключение итерации на основе сообщения.
      *
      * @param message сообщение.
      *
@@ -49,7 +49,7 @@ public class IterationException extends CollectionException {
     }
 
     /**
-     * Создаёт исключение на основе причины.
+     * Создаёт исключение итерации на основе причины.
      *
      * @param cause причина.
      *
@@ -61,7 +61,7 @@ public class IterationException extends CollectionException {
     }
 
     /**
-     * Создаёт исключение на основе сообщения и причины.
+     * Создаёт исключение итерации на основе сообщения и причины.
      *
      * @param message сообщение.
      * @param cause причина.
@@ -74,7 +74,7 @@ public class IterationException extends CollectionException {
     }
 
     /**
-     * Создаёт исключение на основе параметров подавления и трассировки стека.
+     * Создаёт исключение итерации на основе параметров подавления и трассировки стека.
      *
      * @param suppression параметр подавления.
      * @param writable параметр трассировки стека.
@@ -87,7 +87,7 @@ public class IterationException extends CollectionException {
     }
 
     /**
-     * Создаёт исключение на основе сообщения, параметров подавления и трассировки стека.
+     * Создаёт исключение итерации на основе сообщения, параметров подавления и трассировки стека.
      *
      * @param message сообщение.
      * @param suppression параметр подавления.
@@ -96,12 +96,13 @@ public class IterationException extends CollectionException {
      * @since 1.0.0-RC1
      */
     @Contract("_, _, _ -> new")
-    public IterationException(final String message, final boolean suppression, final boolean writable) {
+    public IterationException(final @NotNls @Nullable String message, final boolean suppression,
+                              final boolean writable) {
         super(message, suppression, writable);
     }
 
     /**
-     * Создаёт исключение на основе причины, параметров подавления и трассировки стека.
+     * Создаёт исключение итерации на основе причины, параметров подавления и трассировки стека.
      *
      * @param cause причина.
      * @param suppression параметр подавления.
@@ -110,12 +111,12 @@ public class IterationException extends CollectionException {
      * @since 1.0.0-RC1
      */
     @Contract("_, _, _ -> new")
-    public IterationException(final Throwable cause, final boolean suppression, final boolean writable) {
+    public IterationException(final @Nullable Throwable cause, final boolean suppression, final boolean writable) {
         super(cause, suppression, writable);
     }
 
     /**
-     * Создаёт исключение на основе сообщения, причины, параметров подавления и трассировки стека.
+     * Создаёт исключение итерации на основе сообщения, причины, параметров подавления и трассировки стека.
      *
      * @param message сообщение.
      * @param cause причина.
