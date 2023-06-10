@@ -26,6 +26,13 @@ public class SequentialIterationException extends IterationException {
     public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to iterate sequentially";
 
     /**
+     * Шаблонное сообщение.
+     *
+     * @since 1.0.0-RC1
+     */
+    public static final @NotNls @NotNull String TEMPLATE_MESSAGE = "Failed to iterate sequentially through %s";
+
+    /**
      * Создаёт исключение последовательной итерации по умолчанию.
      *
      * @since 1.0.0-RC1
