@@ -26,7 +26,7 @@ public class SequentialIterationException extends IterationException {
     public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to iterate sequentially";
 
     /**
-     * Создаёт исключение по умолчанию.
+     * Создаёт исключение последовательной итерации по умолчанию.
      *
      * @since 1.0.0-RC1
      */
@@ -36,7 +36,7 @@ public class SequentialIterationException extends IterationException {
     }
 
     /**
-     * Создаёт исключение на основе сообщения.
+     * Создаёт исключение последовательной итерации на основе сообщения.
      *
      * @param message сообщение.
      *
@@ -48,7 +48,7 @@ public class SequentialIterationException extends IterationException {
     }
 
     /**
-     * Создаёт исключение на основе причины.
+     * Создаёт исключение последовательной итерации на основе причины.
      *
      * @param cause причина.
      *
@@ -60,7 +60,7 @@ public class SequentialIterationException extends IterationException {
     }
 
     /**
-     * Создаёт исключение на основе сообщения и причины.
+     * Создаёт исключение последовательной итерации на основе сообщения и причины.
      *
      * @param message сообщение.
      * @param cause причина.
@@ -73,7 +73,7 @@ public class SequentialIterationException extends IterationException {
     }
 
     /**
-     * Создаёт исключение на основе параметров подавления и трассировки стека.
+     * Создаёт исключение последовательной итерации на основе параметров подавления и трассировки стека.
      *
      * @param suppression параметр подавления.
      * @param writable параметр трассировки стека.
@@ -86,7 +86,7 @@ public class SequentialIterationException extends IterationException {
     }
 
     /**
-     * Создаёт исключение на основе сообщения, параметров подавления и трассировки стека.
+     * Создаёт исключение последовательной итерации на основе сообщения, параметров подавления и трассировки стека.
      *
      * @param message сообщение.
      * @param suppression параметр подавления.
@@ -95,12 +95,13 @@ public class SequentialIterationException extends IterationException {
      * @since 1.0.0-RC1
      */
     @Contract("_, _, _ -> new")
-    public SequentialIterationException(final String message, final boolean suppression, final boolean writable) {
+    public SequentialIterationException(final @NotNls @Nullable String message, final boolean suppression,
+                                        final boolean writable) {
         super(message, suppression, writable);
     }
 
     /**
-     * Создаёт исключение на основе причины, параметров подавления и трассировки стека.
+     * Создаёт исключение последовательной итерации на основе причины, параметров подавления и трассировки стека.
      *
      * @param cause причина.
      * @param suppression параметр подавления.
@@ -109,12 +110,14 @@ public class SequentialIterationException extends IterationException {
      * @since 1.0.0-RC1
      */
     @Contract("_, _, _ -> new")
-    public SequentialIterationException(final Throwable cause, final boolean suppression, final boolean writable) {
+    public SequentialIterationException(final @Nullable Throwable cause, final boolean suppression,
+                                        final boolean writable) {
         super(cause, suppression, writable);
     }
 
     /**
-     * Создаёт исключение на основе сообщения, причины, параметров подавления и трассировки стека.
+     * Создаёт исключение последовательной итерации на основе сообщения, причины, параметров подавления и трассировки
+     * стека.
      *
      * @param message сообщение.
      * @param cause причина.
