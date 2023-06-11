@@ -9,7 +9,7 @@ package com.bloogefest.collection;
 import com.bloogefest.annotation.analysis.Contract;
 import com.bloogefest.annotation.analysis.NotNull;
 import com.bloogefest.annotation.analysis.Range;
-import com.bloogefest.collection.iteration.MutableIterator;
+import com.bloogefest.collection.iteration.iterator.MutableIterator;
 import com.bloogefest.common.function.Handler;
 import com.bloogefest.common.function.Predicate;
 import com.bloogefest.common.validation.NullException;
