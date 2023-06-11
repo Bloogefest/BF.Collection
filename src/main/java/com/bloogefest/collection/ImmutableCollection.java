@@ -9,7 +9,7 @@ package com.bloogefest.collection;
 import com.bloogefest.annotation.analysis.Contract;
 import com.bloogefest.annotation.analysis.NotNull;
 import com.bloogefest.annotation.analysis.Range;
-import com.bloogefest.collection.iteration.ImmutableIterator;
+import com.bloogefest.collection.iteration.iterator.ImmutableIterator;
 import com.bloogefest.common.function.Handler;
 import com.bloogefest.common.function.Predicate;
 import com.bloogefest.common.validation.NullException;
@@ -18,11 +18,11 @@ import com.bloogefest.common.validation.Validator;
 /**
  * Неизменяемая коллекция.
  *
- * @param <E> тип элемента.
+ * @param <T> тип элемента.
  *
  * @since 1.0.0-RC1
  */
-public interface ImmutableCollection<E> {
+public interface ImmutableCollection<T> {
 
     /**
      * Итерирует переданный обработчик по текущей коллекции.
@@ -35,7 +35,7 @@ public interface ImmutableCollection<E> {
      * @since 1.0.0-RC1
      */
     @Contract("!null -> this; _ -> fail")
-    default @NotNull ImmutableCollection<E> iterate(final @NotNull Handler<E> handler) throws NullException {
+    default @NotNull ImmutableCollection<T> iterate(final @NotNull Handler<T> handler) throws NullException {
         Validator.notNull(handler, "handler");
         for (final var element : external()) handler.handle(element);
         return this;
@@ -52,7 +52,7 @@ public interface ImmutableCollection<E> {
      * @since 1.0.0-RC1
      */
     @Contract("!null -> this; _ -> fail")
-    default @NotNull ImmutableCollection<E> iterate(final @NotNull Predicate<E> predicate) throws NullException {
+    default @NotNull ImmutableCollection<T> iterate(final @NotNull Predicate<T> predicate) throws NullException {
         Validator.notNull(predicate, "predicate");
         for (final var element : external()) if (!predicate.evaluate(element)) break;
         return this;
@@ -66,7 +66,7 @@ public interface ImmutableCollection<E> {
      * @since 1.0.0-RC1
      */
     @Contract("-> new")
-    @NotNull ImmutableIterator<E> iterator();
+    @NotNull ImmutableIterator<T> iterator();
 
     /**
      * Создаёт внешнюю неизменяемую коллекцию на основе текущей.
@@ -76,7 +76,7 @@ public interface ImmutableCollection<E> {
      * @since 1.0.0-RC1
      */
     @Contract("-> new")
-    default @NotNull Iterable<E> external() {
+    default @NotNull Iterable<T> external() {
         return iterator()::external;
     }
 
