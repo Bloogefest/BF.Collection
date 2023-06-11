@@ -75,12 +75,14 @@ public class IteratorElementOptionalGettingException extends IteratorElementExce
      * @since 1.0.0-RC1
      */
     @Contract("_, _ -> new")
-    public IteratorElementOptionalGettingException(final @NotNls @Nullable String message, final @Nullable Throwable cause) {
+    public IteratorElementOptionalGettingException(final @NotNls @Nullable String message,
+                                                   final @Nullable Throwable cause) {
         super(message, cause);
     }
 
     /**
-     * Создаёт исключение необязательного получения элемента итератора на основе параметров подавления и трассировки стека.
+     * Создаёт исключение необязательного получения элемента итератора на основе параметров подавления и трассировки
+     * стека.
      *
      * @param suppression параметр подавления.
      * @param writable параметр трассировки стека.
@@ -93,7 +95,8 @@ public class IteratorElementOptionalGettingException extends IteratorElementExce
     }
 
     /**
-     * Создаёт исключение необязательного получения элемента итератора на основе сообщения, параметров подавления и трассировки стека.
+     * Создаёт исключение необязательного получения элемента итератора на основе сообщения, параметров подавления и
+     * трассировки стека.
      *
      * @param message сообщение.
      * @param suppression параметр подавления.
@@ -108,7 +111,8 @@ public class IteratorElementOptionalGettingException extends IteratorElementExce
     }
 
     /**
-     * Создаёт исключение необязательного получения элемента итератора на основе причины, параметров подавления и трассировки стека.
+     * Создаёт исключение необязательного получения элемента итератора на основе причины, параметров подавления и
+     * трассировки стека.
      *
      * @param cause причина.
      * @param suppression параметр подавления.
@@ -123,8 +127,8 @@ public class IteratorElementOptionalGettingException extends IteratorElementExce
     }
 
     /**
-     * Создаёт исключение необязательного получения элемента итератора на основе сообщения, причины, параметров подавления и трассировки
-     * стека.
+     * Создаёт исключение необязательного получения элемента итератора на основе сообщения, причины, параметров
+     * подавления и трассировки стека.
      *
      * @param message сообщение.
      * @param cause причина.
@@ -134,8 +138,9 @@ public class IteratorElementOptionalGettingException extends IteratorElementExce
      * @since 1.0.0-RC1
      */
     @Contract("_, _, _, _ -> new")
-    protected IteratorElementOptionalGettingException(final @NotNls @Nullable String message, final @Nullable Throwable cause,
-                                                      final boolean suppression, final boolean writable) {
+    protected IteratorElementOptionalGettingException(final @NotNls @Nullable String message,
+                                                      final @Nullable Throwable cause, final boolean suppression,
+                                                      final boolean writable) {
         super(message, cause, suppression, writable);
     }
 
