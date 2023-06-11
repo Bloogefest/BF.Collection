@@ -6,7 +6,10 @@
 
 package com.bloogefest.collection.iteration.iterator;
 
-import com.bloogefest.annotation.analysis.*;
+import com.bloogefest.annotation.analysis.Contract;
+import com.bloogefest.annotation.analysis.NotNls;
+import com.bloogefest.annotation.analysis.NotNull;
+import com.bloogefest.annotation.analysis.Nullable;
 
 /**
  * Исключение изменения позиции итератора.
@@ -120,7 +123,8 @@ public class IteratorPositionChangingException extends IteratorException {
     }
 
     /**
-     * Создаёт исключение изменения позиции итератора на основе сообщения, причины, параметров подавления и трассировки стека.
+     * Создаёт исключение изменения позиции итератора на основе сообщения, причины, параметров подавления и трассировки
+     * стека.
      *
      * @param message сообщение.
      * @param cause причина.
