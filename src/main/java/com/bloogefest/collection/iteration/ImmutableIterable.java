@@ -35,8 +35,6 @@ public interface ImmutableIterable<T> {
      *
      * @throws NullException исключение проверки нулевого объекта (переданного {@linkplain Handler обработчика}).
      * @throws SequentialIterationException исключение последовательной итерации.
-     * @implNote Используется
-     * {@linkplain #lock() инструмент для управления доступом к текущему неизменяемому итерируемому}.
      * @see #iterate(Handler, SequentialIterationDirection)
      * @since 1.0.0-RC1
      */
@@ -58,8 +56,6 @@ public interface ImmutableIterable<T> {
      * @throws NullException исключение проверки нулевого объекта (переданного {@linkplain Handler обработчика} или
      * {@linkplain SequentialIterationDirection направления последовательной итерации}).
      * @throws SequentialIterationException исключение последовательной итерации.
-     * @implNote Используется
-     * {@linkplain #lock() инструмент для управления доступом к текущему неизменяемому итерируемому}.
      * @see #iterate(Handler)
      * @since 1.0.0-RC1
      */
@@ -91,8 +87,6 @@ public interface ImmutableIterable<T> {
      *
      * @throws NullException исключение проверки нулевого объекта (переданного {@linkplain Predicate предиката}).
      * @throws SequentialIterationException исключение последовательной итерации.
-     * @implNote Используется
-     * {@linkplain #lock() инструмент для управления доступом к текущему неизменяемому итерируемому}.
      * @see #iterate(Predicate, SequentialIterationDirection)
      * @since 1.0.0-RC1
      */
@@ -114,8 +108,6 @@ public interface ImmutableIterable<T> {
      * @throws NullException исключение проверки нулевого объекта (переданного {@linkplain Predicate предиката} или
      * {@linkplain SequentialIterationDirection направления последовательной итерации}).
      * @throws SequentialIterationException исключение последовательной итерации.
-     * @implNote Используется
-     * {@linkplain #lock() инструмент для управления доступом к текущему неизменяемому итерируемому}.
      * @see #iterate(Predicate)
      * @since 1.0.0-RC1
      */
