@@ -25,6 +25,7 @@ public abstract class AbstractImmutableIterable<T> implements ImmutableIterable<
      * {@linkplain Lock Инструмент для управления доступом} к текущему
      * {@linkplain AbstractImmutableIterable абстрактному неизменяемому итерируемому}.
      *
+     * @see #lock()
      * @since 1.0.0-RC1
      */
     private final @NotNull Lock lock;
@@ -32,6 +33,7 @@ public abstract class AbstractImmutableIterable<T> implements ImmutableIterable<
     /**
      * Параметр поддержки нулевых элементов.
      *
+     * @see #nullable()
      * @since 1.0.0-RC1
      */
     private final boolean nullable;
@@ -64,6 +66,7 @@ public abstract class AbstractImmutableIterable<T> implements ImmutableIterable<
      * @return {@linkplain Lock Инструмент для управления доступом} к текущему
      * {@linkplain AbstractImmutableIterable абстрактному неизменяемому итерируемому}.
      *
+     * @see #lock
      * @since 1.0.0-RC1
      */
     @Override
@@ -77,6 +80,7 @@ public abstract class AbstractImmutableIterable<T> implements ImmutableIterable<
      *
      * @return Параметр поддержки нулевых элементов.
      *
+     * @see #nullable
      * @since 1.0.0-RC1
      */
     @Override
