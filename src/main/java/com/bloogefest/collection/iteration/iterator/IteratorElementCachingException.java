@@ -23,7 +23,7 @@ public class IteratorElementCachingException extends IteratorElementException {
      *
      * @since 1.0.0-RC1
      */
-    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to get iterator element";
+    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to cache iterator element";
 
     /**
      * Создаёт исключение кэширования элемента итератора на основе {@linkplain #DEFAULT_MESSAGE сообщения},
