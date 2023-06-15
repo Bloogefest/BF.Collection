@@ -63,7 +63,7 @@ public interface ImmutableIterator<T> {
      * @since 1.0.0-RC1
      */
     @Contract("-> new")
-    default @Nullable Optional<T> optionalCurrent() throws IteratorElementOptionalGettingException, IteratorAuxiliaryException {
+    default @NotNull Optional<T> optionalCurrent() throws IteratorElementOptionalGettingException, IteratorAuxiliaryException {
         final @NotNull var lock = lock();
         try {
             lock.lockInterruptibly();
@@ -91,7 +91,7 @@ public interface ImmutableIterator<T> {
      * @since 1.0.0-RC1
      */
     @Contract("-> new")
-    default @Nullable Optional<T> optionalCached() throws IteratorElementOptionalGettingException, IteratorAuxiliaryException {
+    default @NotNull Optional<T> optionalCached() throws IteratorElementOptionalGettingException, IteratorAuxiliaryException {
         final @NotNull var lock = lock();
         try {
             lock.lockInterruptibly();
