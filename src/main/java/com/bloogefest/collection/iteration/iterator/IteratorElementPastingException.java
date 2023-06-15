@@ -33,17 +33,21 @@ public class IteratorElementPastingException extends IteratorElementException {
     public static final @NotNls @NotNull String TEMPLATE_MESSAGE = "Failed to paste %s";
 
     /**
-     * Создаёт исключение вставки элемента итератора по умолчанию.
+     * Создаёт исключение вставки элемента итератора на основе {@linkplain #DEFAULT_MESSAGE сообщения},
+     * {@linkplain #DEFAULT_CAUSE причины}, {@linkplain #DEFAULT_SUPPRESSION параметров подавления} и
+     * {@linkplain #DEFAULT_WRITABLE трассировки стека по умолчанию}.
      *
      * @since 1.0.0-RC1
      */
     @Contract("-> new")
     public IteratorElementPastingException() {
-        super(DEFAULT_MESSAGE);
+        this(DEFAULT_MESSAGE, DEFAULT_CAUSE, DEFAULT_SUPPRESSION, DEFAULT_WRITABLE);
     }
 
     /**
-     * Создаёт исключение вставки элемента итератора на основе сообщения.
+     * Создаёт исключение вставки элемента итератора на основе переданного сообщения,
+     * {@linkplain #DEFAULT_CAUSE причины}, {@linkplain #DEFAULT_SUPPRESSION параметров подавления} и
+     * {@linkplain #DEFAULT_WRITABLE трассировки стека по умолчанию}.
      *
      * @param message сообщение.
      *
@@ -51,11 +55,13 @@ public class IteratorElementPastingException extends IteratorElementException {
      */
     @Contract("_ -> new")
     public IteratorElementPastingException(final @NotNls @Nullable String message) {
-        super(message);
+        this(message, DEFAULT_CAUSE, DEFAULT_SUPPRESSION, DEFAULT_WRITABLE);
     }
 
     /**
-     * Создаёт исключение вставки элемента итератора на основе причины.
+     * Создаёт исключение вставки элемента итератора на основе {@linkplain #DEFAULT_MESSAGE сообщения по умолчанию},
+     * переданной причины, {@linkplain #DEFAULT_SUPPRESSION параметров подавления} и
+     * {@linkplain #DEFAULT_WRITABLE трассировки стека по умолчанию}.
      *
      * @param cause причина.
      *
@@ -63,11 +69,13 @@ public class IteratorElementPastingException extends IteratorElementException {
      */
     @Contract("_ -> new")
     public IteratorElementPastingException(final @Nullable Throwable cause) {
-        super(cause);
+        this(DEFAULT_MESSAGE, cause, DEFAULT_SUPPRESSION, DEFAULT_WRITABLE);
     }
 
     /**
-     * Создаёт исключение вставки элемента итератора на основе сообщения и причины.
+     * Создаёт исключение вставки элемента итератора на основе переданного сообщения и причины,
+     * {@linkplain #DEFAULT_SUPPRESSION параметров подавления} и
+     * {@linkplain #DEFAULT_WRITABLE трассировки стека по умолчанию}.
      *
      * @param message сообщение.
      * @param cause причина.
@@ -76,11 +84,12 @@ public class IteratorElementPastingException extends IteratorElementException {
      */
     @Contract("_, _ -> new")
     public IteratorElementPastingException(final @NotNls @Nullable String message, final @Nullable Throwable cause) {
-        super(message, cause);
+        this(message, cause, DEFAULT_SUPPRESSION, DEFAULT_WRITABLE);
     }
 
     /**
-     * Создаёт исключение вставки элемента итератора на основе параметров подавления и трассировки стека.
+     * Создаёт исключение вставки элемента итератора на основе {@linkplain #DEFAULT_MESSAGE сообщения} и
+     * {@linkplain #DEFAULT_CAUSE причины по умолчанию}, переданных параметров подавления и трассировки стека.
      *
      * @param suppression параметр подавления.
      * @param writable параметр трассировки стека.
@@ -89,11 +98,12 @@ public class IteratorElementPastingException extends IteratorElementException {
      */
     @Contract("_, _ -> new")
     public IteratorElementPastingException(final boolean suppression, final boolean writable) {
-        super(suppression, writable);
+        this(DEFAULT_MESSAGE, DEFAULT_CAUSE, suppression, writable);
     }
 
     /**
-     * Создаёт исключение вставки элемента итератора на основе сообщения, параметров подавления и трассировки стека.
+     * Создаёт исключение вставки элемента итератора на основе переданного сообщения,
+     * {@linkplain #DEFAULT_CAUSE причины по умолчанию}, переданных параметров подавления и трассировки стека.
      *
      * @param message сообщение.
      * @param suppression параметр подавления.
@@ -104,11 +114,12 @@ public class IteratorElementPastingException extends IteratorElementException {
     @Contract("_, _, _ -> new")
     public IteratorElementPastingException(final @NotNls @Nullable String message, final boolean suppression,
                                            final boolean writable) {
-        super(message, suppression, writable);
+        this(message, DEFAULT_CAUSE, suppression, writable);
     }
 
     /**
-     * Создаёт исключение вставки элемента итератора на основе причины, параметров подавления и трассировки стека.
+     * Создаёт исключение вставки элемента итератора на основе {@linkplain #DEFAULT_MESSAGE сообщения по умолчанию},
+     * переданной причины, параметров подавления и трассировки стека.
      *
      * @param cause причина.
      * @param suppression параметр подавления.
@@ -119,12 +130,12 @@ public class IteratorElementPastingException extends IteratorElementException {
     @Contract("_, _, _ -> new")
     public IteratorElementPastingException(final @Nullable Throwable cause, final boolean suppression,
                                            final boolean writable) {
-        super(cause, suppression, writable);
+        this(DEFAULT_MESSAGE, cause, suppression, writable);
     }
 
     /**
-     * Создаёт исключение вставки элемента итератора на основе сообщения, причины, параметров подавления и трассировки
-     * стека.
+     * Создаёт исключение вставки элемента итератора на основе переданного сообщения, причины, параметров подавления и
+     * трассировки стека.
      *
      * @param message сообщение.
      * @param cause причина.
