@@ -26,6 +26,13 @@ public class IteratorElementGettingException extends IteratorElementException {
     public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to get iterator element";
 
     /**
+     * Шаблонное сообщение.
+     *
+     * @since 1.0.0-RC1
+     */
+    public static final @NotNls @NotNull String TEMPLATE_MESSAGE = "Failed to get %s";
+
+    /**
      * Создаёт исключение получения элемента итератора на основе {@linkplain #DEFAULT_MESSAGE сообщения},
      * {@linkplain #DEFAULT_CAUSE причины}, {@linkplain #DEFAULT_SUPPRESSION параметров подавления} и
      * {@linkplain #DEFAULT_WRITABLE трассировки стека по умолчанию}.
