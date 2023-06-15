@@ -27,17 +27,21 @@ public class CollectionException extends SoftException {
     public static final @NotNls @Null String DEFAULT_MESSAGE = null;
 
     /**
-     * Создаёт исключение коллекции по умолчанию.
+     * Создаёт исключение коллекции на основе {@linkplain #DEFAULT_MESSAGE сообщения},
+     * {@linkplain #DEFAULT_CAUSE причины}, {@linkplain #DEFAULT_SUPPRESSION параметров подавления} и
+     * {@linkplain #DEFAULT_WRITABLE трассировки стека по умолчанию}.
      *
      * @since 1.0.0-RC1
      */
     @Contract("-> new")
     public CollectionException() {
-        super(DEFAULT_MESSAGE);
+        this(DEFAULT_MESSAGE, DEFAULT_CAUSE, DEFAULT_SUPPRESSION, DEFAULT_WRITABLE);
     }
 
     /**
-     * Создаёт исключение коллекции на основе сообщения.
+     * Создаёт исключение коллекции на основе переданного сообщения, {@linkplain #DEFAULT_CAUSE причины},
+     * {@linkplain #DEFAULT_SUPPRESSION параметров подавления} и
+     * {@linkplain #DEFAULT_WRITABLE трассировки стека по умолчанию}.
      *
      * @param message сообщение.
      *
@@ -45,11 +49,13 @@ public class CollectionException extends SoftException {
      */
     @Contract("_ -> new")
     public CollectionException(final @NotNls @Nullable String message) {
-        super(message);
+        this(message, DEFAULT_CAUSE, DEFAULT_SUPPRESSION, DEFAULT_WRITABLE);
     }
 
     /**
-     * Создаёт исключение коллекции на основе причины.
+     * Создаёт исключение коллекции на основе {@linkplain #DEFAULT_MESSAGE сообщения по умолчанию}, переданной причины,
+     * {@linkplain #DEFAULT_SUPPRESSION параметров подавления} и
+     * {@linkplain #DEFAULT_WRITABLE трассировки стека по умолчанию}.
      *
      * @param cause причина.
      *
@@ -57,11 +63,13 @@ public class CollectionException extends SoftException {
      */
     @Contract("_ -> new")
     public CollectionException(final @Nullable Throwable cause) {
-        super(cause);
+        this(DEFAULT_MESSAGE, cause, DEFAULT_SUPPRESSION, DEFAULT_WRITABLE);
     }
 
     /**
-     * Создаёт исключение коллекции на основе сообщения и причины.
+     * Создаёт исключение коллекции на основе переданного сообщения и причины,
+     * {@linkplain #DEFAULT_SUPPRESSION параметров подавления} и
+     * {@linkplain #DEFAULT_WRITABLE трассировки стека по умолчанию}.
      *
      * @param message сообщение.
      * @param cause причина.
@@ -70,11 +78,12 @@ public class CollectionException extends SoftException {
      */
     @Contract("_, _ -> new")
     public CollectionException(final @NotNls @Nullable String message, final @Nullable Throwable cause) {
-        super(message, cause);
+        this(message, cause, DEFAULT_SUPPRESSION, DEFAULT_WRITABLE);
     }
 
     /**
-     * Создаёт исключение коллекции на основе параметров подавления и трассировки стека.
+     * Создаёт исключение коллекции на основе {@linkplain #DEFAULT_MESSAGE сообщения} и
+     * {@linkplain #DEFAULT_CAUSE причины по умолчанию}, переданных параметров подавления и трассировки стека.
      *
      * @param suppression параметр подавления.
      * @param writable параметр трассировки стека.
@@ -83,11 +92,12 @@ public class CollectionException extends SoftException {
      */
     @Contract("_, _ -> new")
     public CollectionException(final boolean suppression, final boolean writable) {
-        super(suppression, writable);
+        this(DEFAULT_MESSAGE, DEFAULT_CAUSE, suppression, writable);
     }
 
     /**
-     * Создаёт исключение коллекции на основе сообщения, параметров подавления и трассировки стека.
+     * Создаёт исключение коллекции на основе переданного сообщения, {@linkplain #DEFAULT_CAUSE причины по умолчанию},
+     * переданных параметров подавления и трассировки стека.
      *
      * @param message сообщение.
      * @param suppression параметр подавления.
@@ -98,11 +108,12 @@ public class CollectionException extends SoftException {
     @Contract("_, _, _ -> new")
     public CollectionException(final @NotNls @Nullable String message, final boolean suppression,
                                final boolean writable) {
-        super(message, suppression, writable);
+        this(message, DEFAULT_CAUSE, suppression, writable);
     }
 
     /**
-     * Создаёт исключение коллекции на основе причины, параметров подавления и трассировки стека.
+     * Создаёт исключение коллекции на основе {@linkplain #DEFAULT_MESSAGE сообщения по умолчанию}, переданной причины,
+     * параметров подавления и трассировки стека.
      *
      * @param cause причина.
      * @param suppression параметр подавления.
@@ -112,11 +123,12 @@ public class CollectionException extends SoftException {
      */
     @Contract("_, _, _ -> new")
     public CollectionException(final @Nullable Throwable cause, final boolean suppression, final boolean writable) {
-        super(cause, suppression, writable);
+        this(DEFAULT_MESSAGE, cause, suppression, writable);
     }
 
     /**
-     * Создаёт исключение коллекции на основе сообщения, причины, параметров подавления и трассировки стека.
+     * Создаёт исключение коллекции на основе переданного сообщения, причины, параметров подавления и трассировки
+     * стека.
      *
      * @param message сообщение.
      * @param cause причина.
