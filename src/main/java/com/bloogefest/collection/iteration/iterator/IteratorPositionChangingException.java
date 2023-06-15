@@ -16,7 +16,7 @@ import com.bloogefest.annotation.analysis.Nullable;
  *
  * @since 1.0.0-RC1
  */
-public class IteratorPositionChangingException extends IteratorException {
+public class IteratorPositionChangingException extends IteratorPositionException {
 
     /**
      * Сообщение по умолчанию.
