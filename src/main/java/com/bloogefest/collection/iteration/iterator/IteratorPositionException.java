@@ -8,7 +8,6 @@ package com.bloogefest.collection.iteration.iterator;
 
 import com.bloogefest.annotation.analysis.Contract;
 import com.bloogefest.annotation.analysis.NotNls;
-import com.bloogefest.annotation.analysis.Null;
 import com.bloogefest.annotation.analysis.Nullable;
 
 /**
