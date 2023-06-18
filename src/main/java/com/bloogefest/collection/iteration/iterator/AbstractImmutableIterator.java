@@ -28,8 +28,7 @@ import java.util.concurrent.locks.Lock;
 public abstract class AbstractImmutableIterator<T> implements ImmutableIterator<T> {
 
     /**
-     * Инструмент для управления доступом к текущему
-     * {@linkplain AbstractImmutableIterator абстрактному итератору неизменяемого}.
+     * Инструмент для управления доступом.
      *
      * @since 1.0.0-RC1
      */
