@@ -13,8 +13,6 @@ import com.bloogefest.common.function.Handler;
 import com.bloogefest.common.function.Predicate;
 import com.bloogefest.common.validation.NullException;
 
-import java.util.concurrent.locks.Lock;
-
 /**
  * Изменяемое итерируемое.
  *
@@ -160,19 +158,6 @@ public interface MutableIterable<T> extends ImmutableIterable<T> {
     default @NotNull ExternalIterable<T> external() {
         return ImmutableIterable.super.external();
     }
-
-    /**
-     * Возвращает {@linkplain Lock инструмент для управления доступом} к текущему
-     * {@linkplain MutableIterable изменяемому итерируемому}.
-     *
-     * @return {@linkplain Lock Инструмент для управления доступом} к текущему
-     * {@linkplain MutableIterable изменяемому итерируемому}.
-     *
-     * @since 1.0.0-RC1
-     */
-    @Override
-    @Contract("-> const")
-    @NotNull Lock lock();
 
     /**
      * Возвращает параметр изменяемости.
