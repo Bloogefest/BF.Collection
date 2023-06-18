@@ -178,11 +178,9 @@ public interface ImmutableIterable<T> {
     }
 
     /**
-     * Возвращает {@linkplain Lock инструмент для управления доступом} к текущему
-     * {@linkplain ImmutableIterable неизменяемому итерируемому}.
+     * Возвращает {@linkplain Lock инструмент для управления доступом}.
      *
-     * @return {@linkplain Lock Инструмент для управления доступом} к текущему
-     * {@linkplain ImmutableIterable неизменяемому итерируемому}.
+     * @return {@linkplain Lock Инструмент для управления доступом}.
      *
      * @since 1.0.0-RC1
      */
