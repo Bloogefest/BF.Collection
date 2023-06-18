@@ -59,10 +59,9 @@ public abstract class AbstractImmutableIterator<T> implements ImmutableIterator<
     }
 
     /**
-     * Возвращает
-     * {@linkplain #lock инструмент для управления доступом к текущему абстрактному итератору неизменяемого}.
+     * Возвращает {@linkplain #lock инструмент для управления доступом}.
      *
-     * @return {@linkplain #lock Инструмент для управления доступом к текущему абстрактному итератору неизменяемого}.
+     * @return {@linkplain #lock Инструмент для управления доступом}.
      *
      * @since 1.0.0-RC1
      */
