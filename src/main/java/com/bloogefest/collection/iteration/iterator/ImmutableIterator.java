@@ -428,6 +428,7 @@ public interface ImmutableIterator<T> {
      *
      * @since 1.0.0-RC1
      */
+    @Contract("-> const")
     boolean nullable();
 
     /**
