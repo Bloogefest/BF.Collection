@@ -23,7 +23,7 @@ public class IteratorElementChangingException extends IteratorElementException {
      *
      * @since 1.0.0-RC1
      */
-    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to change iterator element to another";
+    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to change the iterator element to another";
 
     /**
      * Шаблонное сообщение.
