@@ -23,7 +23,7 @@ public class IteratorElementGettingException extends IteratorElementException {
      *
      * @since 1.0.0-RC1
      */
-    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to get iterator element";
+    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to get the iterator element";
 
     /**
      * Шаблонное сообщение.
