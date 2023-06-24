@@ -23,7 +23,7 @@ public class IteratorElementCuttingException extends IteratorElementException {
      *
      * @since 1.0.0-RC1
      */
-    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to cut iterator element";
+    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to cut the iterator element";
 
     /**
      * Шаблонное сообщение.
