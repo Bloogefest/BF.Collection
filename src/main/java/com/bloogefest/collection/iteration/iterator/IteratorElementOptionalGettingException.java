@@ -23,7 +23,7 @@ public class IteratorElementOptionalGettingException extends IteratorElementExce
      *
      * @since 1.0.0-RC1
      */
-    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to get optionally iterator element";
+    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to get optionally the iterator element";
 
     /**
      * Шаблонное сообщение.
