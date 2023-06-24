@@ -23,7 +23,7 @@ public class IteratorPositionChangingException extends IteratorPositionException
      *
      * @since 1.0.0-RC1
      */
-    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to change iterator position";
+    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to change the iterator position";
 
     /**
      * Шаблонное сообщение.
