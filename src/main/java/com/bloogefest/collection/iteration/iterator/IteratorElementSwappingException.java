@@ -23,7 +23,7 @@ public class IteratorElementSwappingException extends IteratorElementException {
      *
      * @since 1.0.0-RC1
      */
-    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to swap iterator elements";
+    public static final @NotNls @NotNull String DEFAULT_MESSAGE = "Failed to swap the iterator elements";
 
     /**
      * Шаблонное сообщение.
